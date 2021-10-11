@@ -4,8 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@types/request-promise": "^4.1.48",
+    "cheerio": "^1.0.0-rc.10",
     "express": "^4.17.1",
-    "instagram-save": "^1.3.2"
+    "instagram-save": "^1.3.2",
+    "request-promise": "^4.2.6"
   },
   "scripts": {
     "build": "tsc --project ./",

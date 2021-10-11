@@ -2,7 +2,7 @@ import { Action, ActionType, State } from './types'
 
 export const INITIAL_STATE: State = {
   isRequesting: false,
-  instagramLink: null,
+  instagramPostLink: null,
   mediaLink: null,
   isMediaVideo: false,
 }
@@ -10,11 +10,11 @@ export const INITIAL_STATE: State = {
 export const reducer = (state: State = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case ActionType.SET_IS_REQUESTING: {
-      const { isRequesting, instagramLink } = action
+      const { isRequesting, instagramPostLink } = action
       return {
         ...state,
         isRequesting,
-        instagramLink,
+        instagramPostLink,
       }
     }
     case ActionType.SET_MEDIA_LINK: {

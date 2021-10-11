@@ -3,7 +3,7 @@ import { Dispatch } from 'react'
 export type State = {
   isRequesting: boolean
   mediaLink: string | null
-  instagramLink: string | null
+  instagramPostLink: string | null
   isMediaVideo: boolean | null
 }
 
@@ -13,7 +13,7 @@ export enum ActionType {
 }
 
 export type Action =
-  | { type: ActionType.SET_IS_REQUESTING; isRequesting: boolean; instagramLink: string }
+  | { type: ActionType.SET_IS_REQUESTING; isRequesting: boolean; instagramPostLink: string }
   | { type: ActionType.SET_MEDIA_LINK; mediaLink: string; isMediaVideo: boolean }
 
 export type Context = {

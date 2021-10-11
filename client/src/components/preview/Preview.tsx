@@ -19,7 +19,7 @@ export const Preview = () => {
             {colors && colors.map((color) => {
                 const [r,g,b] = color;
                 // @ts-ignore
-                return <SColor r={r} g={g} b={b}/>
+                return <SColor r={r} g={g} b={b} isVisible={!isRequesting}/>
             })}
         </SColorPalette>
     </SWrapper>

@@ -47,7 +47,6 @@ app.post(
     //   mediaId,
     //   isVideo,
     //   transloadedLink,
-    //   // @ts-ignore
     //   colors
     // })
   },

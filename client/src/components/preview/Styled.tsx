@@ -53,12 +53,15 @@ export const SColorPalette = styled.div<{ isVisible: boolean }>`
   display: flex;
   flex-direction: column;
   padding-left: 1rem;
+  
 `
 
-export const SColor = styled.div<{ r: string, g: string, b: string }>`
+export const SColor = styled.div<{ r: string, g: string, b: string, isVisible: boolean }>`
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
   background-color: rgb(${props => props.r},${props => props.g}, ${props => props.b});
   margin-bottom: 0.5rem;
+  transform: scale(${props => (props.isVisible ? 1 : 0)});
+  transition: all 0.2s ease-in-out;
 `;

@@ -4,5 +4,6 @@ export type RequestType = {
 export type ResponseSuccessType = {
     mediaId: string,
     isVideo: boolean,
-    transloadedLink: string
+    transloadedLink: string,
+    colors?: Array<Array<number>>
 }

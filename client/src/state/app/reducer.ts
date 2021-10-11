@@ -5,6 +5,12 @@ export const INITIAL_STATE: State = {
   instagramPostLink: null,
   mediaLink: null,
   isMediaVideo: false,
+  colors: [
+      [13,13,13],
+      [13,13,13],
+      [13,13,13],
+      [13,13,13],
+  ]
 }
 
 export const reducer = (state: State = INITIAL_STATE, action: Action) => {
@@ -23,7 +29,7 @@ export const reducer = (state: State = INITIAL_STATE, action: Action) => {
         ...state,
         isMediaVideo,
         mediaLink,
-        colors,
+        colors: colors || state.colors, // if video, go back to black.. well hello Amy Winehouse
         isRequesting: false,
       }
     }

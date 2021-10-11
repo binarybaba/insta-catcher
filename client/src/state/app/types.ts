@@ -15,7 +15,7 @@ export enum ActionType {
 
 export type Action =
   | { type: ActionType.SET_IS_REQUESTING; isRequesting: boolean; instagramPostLink: string }
-  | { type: ActionType.SET_MEDIA_LINK; mediaLink: string; isMediaVideo: boolean, colors?: Array<Array<number>> }
+  | { type: ActionType.SET_MEDIA_LINK; mediaLink: string; isMediaVideo: boolean, colors: Array<Array<number>> }
 
 export type Context = {
   state: State

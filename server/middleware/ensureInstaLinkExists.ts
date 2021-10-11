@@ -6,6 +6,16 @@ export const ensureInstaLinkExists = (req: Request<RequestType>, res: Response, 
     if(!instagramPostLink) {
         res.sendStatus(401)
     } else {
-        next();
+        const [protocol, slashslash, wwwinstagramcom, p, ] = instagramPostLink.split('/');
+        if(wwwinstagramcom !== 'www.instagram.com' || p !== 'p' ) {
+            res.send({
+                mediaId: '',
+                isVideo: false,
+                transloadedLink: 'https://storage.googleapis.com/insat_catch/http-400-bad-request.jpeg',
+                colors: null
+            })
+        } else {
+            next();
+        }
     }
 }

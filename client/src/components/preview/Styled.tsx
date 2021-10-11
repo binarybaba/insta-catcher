@@ -27,6 +27,15 @@ export const SImage = styled.img<{ isVisible: boolean }>`
   transform: ${props => (props.isVisible ? `translate(0,0)` : `translate(0, 0.875rem)`)}
   transform: scale(${props => (props.isVisible ? 1 : 0)});
 `
+export const SVideo = styled.video<{ isVisible: boolean }>`
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+  opacity: ${props => (props.isVisible ? 1 : 0)};
+  visibility: ${props => (props.isVisible ? 'visible' : 'hidden')};
+  transform: ${props => (props.isVisible ? `translate(0,0)` : `translate(0, 0.875rem)`)}
+  transform: scale(${props => (props.isVisible ? 1 : 0)});
+`;
 
 export const SLogo = styled.div<{ isVisible: boolean }>`
   position: absolute;

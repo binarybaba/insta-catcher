@@ -1,0 +1,32 @@
+import { Action, ActionType, State } from './types'
+
+export const INITIAL_STATE: State = {
+  isRequesting: false,
+  instagramLink: null,
+  mediaLink: null,
+  isMediaVideo: false,
+}
+
+export const reducer = (state: State = INITIAL_STATE, action: Action) => {
+  switch (action.type) {
+    case ActionType.SET_IS_REQUESTING: {
+      const { isRequesting, instagramLink } = action
+      return {
+        ...state,
+        isRequesting,
+        instagramLink,
+      }
+    }
+    case ActionType.SET_MEDIA_LINK: {
+      const { isMediaVideo, mediaLink } = action
+      return {
+        ...state,
+        isMediaVideo,
+        mediaLink,
+        isRequesting: false,
+      }
+    }
+    default:
+      return state
+  }
+}

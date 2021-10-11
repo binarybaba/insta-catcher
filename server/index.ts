@@ -13,7 +13,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.post('/scrape-instagram-post', ensureInstaLinkExists, async (req: Request<RequestType>, res: Response<ResponseSuccessType>) => {
+app.post('/_/scrape-instagram-post', ensureInstaLinkExists, async (req: Request<RequestType>, res: Response<ResponseSuccessType>) => {
   const { instagramPostLink } = req.body;
 
   const { mediaId, isVideo, downloadUrl } = await parsePage(instagramPostLink);

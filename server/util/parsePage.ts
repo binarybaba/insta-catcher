@@ -2,10 +2,35 @@
  * This codebase was taken from instagram-save and then modified
  * */
 
+type ResolvedType = {
+    canonicalUrl: string,
+    isVideo: boolean,
+    mimeType: string,
+    mediaId: string,
+    filename: string,
+    downloadUrl: string,
+}
+
+
 import cheerio from 'cheerio'
 import request from 'request-promise'
 
-export const parsePage = (url: string) =>
+type ResolveType = {
+    canonicalUrl: string,
+    mimeType: string,
+    filename: string,
+    isVideo: boolean,
+    mediaId: string,
+    downloadUrl: string,
+}
+
+type RejectType = {
+    message: string,
+    url: string,
+    err: any
+}
+
+export const parsePage = async (url: string): Promise<ResolveType> =>
   new Promise((resolve, reject) => {
     request
       .get({

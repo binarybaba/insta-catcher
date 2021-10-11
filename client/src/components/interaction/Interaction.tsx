@@ -26,7 +26,8 @@ export const Interaction = () => {
       })
       try {
         // @ts-ignore
-        let { mediaId, isVideo, transloadedLink } = await fetchScrapeInstagramPost(instagramPostLink)
+        let response = await fetchScrapeInstagramPost(instagramPostLink)
+        let { mediaId, isVideo, transloadedLink } = await response.json()
 
         dispatch({
           type: ActionType.SET_MEDIA_LINK,
@@ -34,7 +35,6 @@ export const Interaction = () => {
           mediaLink: transloadedLink,
         })
       } catch (err) {
-        console.log(err)
         dispatch({
           type: ActionType.SET_IS_REQUESTING,
           isRequesting: false,

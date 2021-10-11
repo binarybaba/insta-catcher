@@ -15,11 +15,13 @@ app.use(express.urlencoded({ extended: true }))
 
 app.post('/_/scrape-instagram-post', ensureInstaLinkExists, async (req: Request<RequestType>, res: Response<ResponseSuccessType>) => {
 
-  res.status(200).send({
-    mediaId: 'CUktcVMsB-s',
-    isVideo: false,
-    transloadedLink: 'https://storage.googleapis.com/download/storage/v1/b/insat_catch/o/CUktcVMsB-s.jpg?generation=1633958563395281&alt=media'
-  })
+  setTimeout(() => {
+    res.status(200).send({
+      mediaId: 'CUktcVMsB-s',
+      isVideo: false,
+      transloadedLink: "https://storage.googleapis.com/download/storage/v1/b/insat_catch/o/CUfqd0gsLQu.jpg?generation=1633970164312244&alt=media"
+    })
+  }, 1000)
 
 
   // const { instagramPostLink } = req.body;

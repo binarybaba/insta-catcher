@@ -1,13 +1,16 @@
 import React from 'react'
 
 import Interaction from 'src/components/interaction/Interaction'
-import Thumbnail from "src/components/thumbnail/Thumbnail";
+import Preview from 'src/components/preview/Preview'
 import AppProvider from 'src/state/app/Provider'
-function App() {
+import { AppWrapper } from './Wrapper'
+export const App = () => {
   return (
     <AppProvider>
-      <Thumbnail />
-      <Interaction />
+      <AppWrapper>
+        <Preview />
+        <Interaction />
+      </AppWrapper>
     </AppProvider>
   )
 }

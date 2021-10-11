@@ -2,9 +2,12 @@ import { useContext, useEffect, useState, useRef, FormEvent } from 'react'
 import AppContext from 'src/state/app/context'
 import { fetchScrapeInstagramPost } from 'src/api/app'
 import { ActionType } from 'src/state/app/types'
+import CircleNotchSolid from 'src/assets/circle-notch-solid.svg'
+import { SForm, SInput, SButton } from './Styled'
 
 export const Interaction = () => {
-  const { dispatch } = useContext(AppContext)
+  const { dispatch, state } = useContext(AppContext)
+  const { isRequesting } = state
   const [instagramPostLink, setInstagramPostLink] = useState('')
 
   const inputRef = useRef<HTMLInputElement>(null)
@@ -48,10 +51,13 @@ export const Interaction = () => {
   }, [instagramPostLink])
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input ref={inputRef} type='text' placeholder='Enter instagram link' />
-      <button type='submit'>Scrape!</button>
-    </form>
+    <SForm onSubmit={handleSubmit}>
+      <SInput isVisible={!isRequesting} ref={inputRef} type='text' placeholder='Enter instagram link' />
+      <SButton isLoading={isRequesting} type='submit'>
+        <span>Go!</span>
+        <img src={CircleNotchSolid} alt='' />
+      </SButton>
+    </SForm>
   )
 }
 

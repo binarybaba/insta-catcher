@@ -2,6 +2,7 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 import Interaction from 'src/components/interaction/Interaction'
+import Thumbnail from "./components/thumbnail/Thumbnail";
 import AppProvider from 'src/state/app/Provider'
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             Learn React
           </a>
         </header>
+        <Thumbnail />
         <Interaction />
       </div>
     </AppProvider>

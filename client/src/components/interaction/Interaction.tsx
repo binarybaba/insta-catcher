@@ -30,12 +30,13 @@ export const Interaction = () => {
       try {
         // @ts-ignore
         let response = await fetchScrapeInstagramPost(instagramPostLink)
-        let { mediaId, isVideo, transloadedLink } = await response.json()
+        let { mediaId, isVideo, transloadedLink, colors } = await response.json()
 
         dispatch({
           type: ActionType.SET_MEDIA_LINK,
           isMediaVideo: isVideo,
           mediaLink: transloadedLink,
+          colors
         })
       } catch (err) {
         dispatch({

@@ -18,11 +18,12 @@ export const reducer = (state: State = INITIAL_STATE, action: Action) => {
       }
     }
     case ActionType.SET_MEDIA_LINK: {
-      const { isMediaVideo, mediaLink } = action
+      const { isMediaVideo, mediaLink, colors } = action
       return {
         ...state,
         isMediaVideo,
         mediaLink,
+        colors,
         isRequesting: false,
       }
     }

@@ -19,21 +19,6 @@ app.post(
   '/_/scrape-instagram-post',
   ensureInstaLinkExists,
   async (req: Request<RequestType>, res: Response<ResponseSuccessType>) => {
-    // setTimeout(() => {
-    //   res.status(200).send({
-    //     mediaId: 'CUktcVMsB-s',
-    //     isVideo: false,
-    //     transloadedLink:
-    //       'https://storage.googleapis.com/download/storage/v1/b/insat_catch/o/CUX4byhMKio.jpg?generation=1633989450699638&alt=media',
-    //     // @ts-ignore
-    //     colors: [
-    //       [25, 25, 25],
-    //       [230, 234, 231],
-    //       [147, 74, 57],
-    //       [175, 136, 101],
-    //     ],
-    //   })
-    // }, 1000)
 
     const { instagramPostLink } = req.body;
 

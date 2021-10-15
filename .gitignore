@@ -2,5 +2,4 @@ node_modules
 build
 .idea
 service_account.json
-client/public
 client/build
